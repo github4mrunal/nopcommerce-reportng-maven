@@ -34,6 +34,7 @@ public class Utility extends BasePage {
         element.click();
     }
 
+
     /**
      * This method will get text from element
      *
@@ -72,9 +73,14 @@ public class Utility extends BasePage {
         select.selectByValue(value);
 
     }
-    public void selectByVisibleTextFromDropDown(By by,String text){
-        Select select = new Select(driver.findElement(by));
-        select.selectByVisibleText(text);
+    public void selectValueFromDropDown(WebElement element, String str){
+        Select select = new Select(element);
+        select.selectByValue(str);
+    }
+
+    public void selectByVisibleTextFromDropDown(WebElement element,String str){
+        Select select = new Select(element);
+        select.selectByVisibleText(str);
     }
 
     /**
